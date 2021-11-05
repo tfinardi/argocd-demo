@@ -7,12 +7,12 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/tfinardi/microservices-demo
+    repoURL: https://github.com/tfinardi/argocd-demo
     targetRevision: HEAD
-    path: app
+    path: microservice-demo
   destination: 
     server: https://kubernetes.default.svc
-    namespace: sock-shop
+    namespace: shop
 
   syncPolicy:
     syncOptions:
@@ -21,4 +21,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-
