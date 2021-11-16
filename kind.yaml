@@ -5,6 +5,13 @@ apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
   extraPortMappings:
+  # expose external frontend locally
+  - containerPort: 8080
+    hostPort: 30010
+    protocol: TCP
+  - containerPort: 80
+    hostPort: 30004
+    protocol: TCP
   - containerPort: 443
-    hostPort: 8080
+    hostPort: 30005
     protocol: TCP
